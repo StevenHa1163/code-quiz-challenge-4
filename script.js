@@ -1,3 +1,4 @@
+//Question variable that stores all available questions for future use
 var questions = [
     {
         title: "Commonly used data types DO NOT include: ",
@@ -27,7 +28,7 @@ var questions = [
 
 ];
 
-
+// Creating a score and timer
 var score = 0;
 var questionList = 0;
 var currentTime = document.querySelector("#currentTime");
@@ -37,9 +38,9 @@ var wrapper = document.querySelector("#wrapper");
 
 
 // Creating a Timer
-var secondsLeft = 60;
-var holdInterval = 0;
-var penalty = 5;
+var secondsLeft = 60; //Initial time of 60 seconds
+var holdInterval = 0; 
+var penalty = 5; //Penalty of 5 seconds when a question is wrong
 var ulCreate = document.createElement("ul");
 
 timer.addEventListener("click",function(){
@@ -88,13 +89,13 @@ function compare(event) {
             score++;
             createDiv.textContent = "Correct!";
         } else {
-            secondsLeft = secondsLeft - penalty;
+            secondsLeft = secondsLeft - penalty; //if question is wrong penalty is subtracted from total time
             createDiv.textContent = "Wrong!";
 
         }
     }
     questionList++;
-
+    //determines whether or not you have more questions left
     if (questionList >= questions.length) {
         allDone();
         createDiv.textContent =
@@ -113,7 +114,7 @@ function compare(event) {
 }
 
 
-//This is the end of the quiz
+
 function allDone() {
     questionsDiv.innerHTML = "";
     currentTime.innerHTML = "";

@@ -19,5 +19,6 @@ if (allScores !== null) {
 }
 
 goBack.addEventListener("click", function () {
+//replaces current window with new document
   window.location.replace("index.html");
 });
